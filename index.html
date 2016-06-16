@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -26,9 +26,73 @@
           <li><a href="https://github.com/g070817/jeff.github.com">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
+	  
+	  
+	  
       <section>
-        <p>Create CV page for Jeff GAO</p>
+        <p>CV of Jeff Gao</p>
       </section>
+	  <hr/>
+	  <section>
+		  <div>
+			<h1>第一天-2016/06/13</h1>
+			<p>Javascript是一种专为“<em>与网页交互而设计</em>”的“<em>脚本</em>”语言。有下列三个不同的部分组成：</p>
+			<ul>
+				<li><strong>ECMAScript</strong>, 由ECMA-262定义，提供核心语言功能（包括语法，类型，语句，关键字，保留字，操作符，对象）</li>
+				<li><strong>文档对象模型（DOM：Document Object Model）</strong>，提供访问与操作网页内容的方法和接口。DOM把整个页面映射为一个多层节点结构。</li>
+				<li><strong>浏览器对象模型（BOM: Browser Object Model）</strong>，提供与浏览器交互的方法和接口。通过BOM可以控制浏览器显示的页面以外的部分。
+					<ol>
+						<li>弹出新浏览器窗口的功能</li>
+						<li>移动、缩放和关闭浏览器窗口的功能</li>
+						<li>提供浏览器详细信息的navigator对象</li>
+						<li>提供浏览器所加载页面的详细信息的location对象</li>
+						<li>提供用户显示器分辨率详细信息的screen对象</li>
+						<li>对cookies的支持</li>
+						<li>自定义对象（像XMLHttpRequest和IE的ActiveXObject这样的）</li>
+					</ol>
+				</li>
+			</ul>
+			<p>Script的使用的两种方式： 直接在页面中嵌入Javascript代码 || 包含外部Javascript文件</p>
+			<ul>
+				<li>直接嵌入Javascript代码 - 不推荐</li>
+				<li>包含外部Javascript文件 - 推荐使用</li>
+				<p>关键属性: src = "外部文件 or 外部域文件（来自于在线的站点）， type = "text/javascript"</p>
+				<p>放置位置：body里面，主要或全部内容之后，如果放在head里面，可能会导致页面加载延迟，显示内容之前会保持空白页面</p>
+				<p>noscript标签： 使用该标签时，在浏览器不支持javascript或者Javascript被禁用时显示标签中的内容</p>
+			</ul>
+			<h1>第2天-2016/06/15</h1>
+				<h5>----科目三考试简直就是去练级打怪，还好一次性通过，但是也浪费了整整一天</h5>
+				<p>区分大小写</p>
+				<p>标识符： 变量、函数、属性、函数的参数</p>
+				<p>首字符：必须是字母，下划线，或者$符号 && 驼峰大小写格式：第一个字母小写，后面每个单词的首字母大写</p>
+				<p>关键字和保留字: break case catch continue debugger* default delete do else finally for function if in instanceof new return switch this throw try typeof var void while with</p>
+				<p>基本数据类型：undefined boolean string number object function</p>
+				<p>Boolean(xxx); 只有boolea false值， 空字符串“”， 数字中的0和NaN， 值为null的对象，以及undefined会返回boolean false值</p>
+				<p>未初始化变量和未定义变量都会返回undefined类型，但为初始化的变量的值就是undefined，而未定义变量没有值返回</p>
+				<p>如果意在保存对象的变量还没有真正保存对象，就应该明确的让该变量保存null值</p>
+				<p>关于数值：1. 不要尝试将两个浮点数相加然后和预测的和进行==对比，因为浮点数不够精确（1e-17），2. 最小值（5e-324）最大值（1.79769.。。。e+308）会被记录为正负无穷，将无法参与下一次对该值的运算</p>
+				<p>isNaN(x): 会尝试将X转换为一个数值，例如boolean 值会被转换为0/1。但是其它有包含数字的非数值可能会被转换为数值。</p>
+				<p>Number(x): boolean 值会被转换为0/1,数字仍返回数字，null和空字符串返回为0，undefined返回NaN，只包含数字的字符串会转换为对应数字-前导零会丢弃，16进制即包含0xf的字符串转为10进制数字</p>
+				<p>parseInt(): 针对字符串转为数值的函数，可以传递第二个参数为进制参数，规则： 忽略字符串前面的空格，如果第一个非空格字符不是数字或者“-”号，返回NaN;否则会读取后续连续的数字作为返回数值，后面的非数字或未连续的数字将会被丢弃;如果有“."号，则到“."号位置返回整数值</p>
+				<p>parseFloat(): 将字符串转为浮点数数值得函数，也就是说可以识别第一个”.“号，没有点号将返回整数，16进制数将只返回0</p>
+				<p>String类型:</p>
+				<p>转义字符： \n \t \b \r \f \\ \' \ \" \xnn \unnnn  例如： \x41表示A， \u03a3标识希腊字符sigama: Σ </p>
+				<p>XXX.toString(): 每个变量都有一个toString()方法，除了null和undefined没有。num.toString(进制参数) 返回给定进制格式的字符串值。 String(object)弥补了toString()添加了对null和undefined的操作，其它object仍然是调用toString()函数</p>
+				<p>Object类型： var o = new Object(); 不建议省略()；每个具体的Object实例对象都具有下列方法属性和方法： Constructor函数，hasOwnProperty(propertyName),isPrototypeOf(object),propertyIsEunmerable(propertyName)检查给定的属性是否能够用for-in语句来枚举, toLocaleString(), toString(),valueOf()</p>
+				<p>arguments参数：与数组类似，可以使用方括号方法访问传递的每一个参数元素，使用arguments.length可以知道传递进来多少个参数</p>
+		
+			<h1>第3天-2016/06/16</h1>
+				<h5>变量、作用域和内存问题</h5>
+				<p>javascript不允许访问内存中的位置：引用类型的值是保存在内存中的对象，操作对象时实际上是操作对象的引用而不是实际的对象，也就是说引用类型的值是按引用访问的</p>
+				<p>动态属性：定义基本类型值和引用类型值的方式类似，即创建一个变量并为该变量赋值。但是，对引用类型的值，可以添加、改变、删除属性和方法，基本类型不能使用动态属性</p>
+				<p>复制变量值：对基本类型值复制等于创建新的完全相互独立但值相等的新变量; 对引用类型复制时，实际上是复制了改引用类型变量的引用值，指向与原变量相同的一个对象</p>
+				<p>传递参数：所有函数的参数都是按照值传递的。</p>
+				<p>类型检测：typeof检测是否是基本数据类型或对象 instanceof检测是某一种引用类型的对象，更具体Array, RegExp等</p>
+				<p>执行环境：定义了变量及函数有权访问的其它数据，决定了它们各自的行为。全局执行环境是最外围的一个执行环境，每个函数都有自己的局部执行环境；内部变量不能被外部访问；但是with语句和try-catch语句 的catch部分变向延长了作用域范围。</p>
+				<p>垃圾收集：标记清楚/引用计数（引用计数在循环引用时会有问题，不用时应及时手工解除引用 xxx = null；），建议：及时解除不再使用的全局对象，全局对象属性，及循环引用变量的引用。
+		
+		</div>
+	  </section>
     </div>
     <footer>
       <p>Project maintained by <a href="https://github.com/g070817">g070817</a></p>
