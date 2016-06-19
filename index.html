@@ -75,8 +75,7 @@
 				<p>Object类型： var o = new Object(); 或者 var o = {}不建议省略()；每个具体的Object实例对象都具有下列方法属性和方法： Constructor函数，hasOwnProperty(propertyName),isPrototypeOf(object),propertyIsEunmerable(propertyName)检查给定的属性是否能够用for-in语句来枚举, toLocaleString(), toString(),valueOf()</p>
 				<p><strong>arguments参数：</strong>与数组类似，可以使用方括号方法访问传递的每一个参数元素，使用arguments.length可以知道传递进来多少个参数</p>
 		
-			<li><h1>第3天-2016/06/16</h1></li>
-				<h5>变量、作用域和内存问题</h5>
+			http://www.cmbchina.com/http://www.cmbchina.com/http://www.cmbchina.com/
 				<p><strong>javascript不允许访问内存中的位置</strong>：引用类型的值是保存在内存中的对象，操作对象时实际上是操作对象的引用而不是实际的对象，也就是说引用类型的值是按引用访问的</p>
 				<p><strong>动态属性：</strong>定义基本类型值和引用类型值的方式类似，即创建一个变量并为该变量赋值。但是，对引用类型的值，可以添加、改变、删除属性和方法，基本类型不能使用动态属性</p>
 				<p><strong>复制变量值：</strong>对基本类型值复制等于创建新的完全相互独立但值相等的新变量; 对引用类型复制时，实际上是复制了改引用类型变量的引用值，指向与原变量相同的一个对象</p>
@@ -91,12 +90,19 @@
 				<p><strong>数组排序：</strong> colors.sort()-数组每一项的值先转为字符串，然后在比较；反转函数-colors.reverse(); colors.sort(compare)-function compare(){if(value1 < value2) return 1; else if(value1 > value2) return -1; else return 0}</p>
 				<p><strong>数组操作方法: </strong>colors.concat("yellow",["black", "brown"]); colors.slice(1)-复制从位置1到结尾的新数组; colors.slice(1, 4)-复制一个从位置1到位置4的新数组; colors.splice(0,2)-删除从位置0开始的2项并将删除项目存到一个新的数组里; colors.splice(2, 1, "red", "green")-从位置2开始插入2项删除1项并创建一个新数组存储删除项;</p>
 				<p>数组位置方法： colors.indexOf(4) 返回colors[3]; colors.lastIndexOf(4) 返回倒数第四位</p>
-				<p><strong>数组迭代方法</strong>colors.every()每一项都预算，所有为true则返回true；colors.filter()，返回符合条件的项组成的数组； colors.forEach()每一项运算，无返回值；colors.map()将每一项运算结果返回为新的数组，用来创建关联数组；colors.some()任何有一项运算返回true则返回true</p>
+				<p><strong>数组迭代方法</strong>colors.every()每一项都运算，所有为true则返回true；colors.filter()，返回符合条件的项组成的数组； colors.forEach()每一项运算，无返回值；colors.map()将每一项运算结果返回为新的数组，用来创建关联数组；colors.some()任何有一项运算返回true则返回true</p>
 				<h5>Date类型</h5>
 				<p>在早期Java中的java.util.Date基础上构建，使用自UTC1970年1月1日午夜0时开始经过的毫秒数来保存日期。var now = new Date(); Date.parse()接收一个表示日期的字符串参数var someday = newDate(Date.parse("June 16, 2016")); === var someday = new Date("June 16, 2016"); var y2k = new Date(Date.UTC(2000,0)); var y2k = new Date(Date.UTC(2005,4,3,2,1)); 后面的方式基于本地时间设置 var y2k = new Date(2000, 0); var y2k = new Date(2005,4,3,2,1); Date.now();</p>
 				<p><strong>日期格式化方法</strong>：显示星期月日年 - Date().toDateString(); 显示时分秒 - Date().toTimeString()； Date().toLocalDateString()； Date().toLocalTimeString(); toUTCStting(); toLocalString() == toString(); 其它方法还可以分别取得或设置年份，月份，某天，小时等like getMonth()</p>
 				
+			<li><h1>第4天-2016/06/17</h1></li>
+				<h5>面向对象的程序设计</h5>	
+				<p><strong>创建对象</strong>:理解对象，及创建对象的几种模式-工厂模式-构造函数模式-原型模式-及构造函数和原型组合模式等，其中组合构造函数模式和原型模式的方法最优，其中构造函数模式用于定义实例属性，而原型模式用于定义方法和需要共享的属性，最大限度地节省内存S6.2.4 -P178-P159,还可以进一步使用动态原型模式，即在需要时才对原型部分进行初始化</p>
+				<p><strong>继承</strong>:ECMAScript只支持“实现继承”，不支持接口和类继承，实现集成的方式主要是依靠原型链来实现的。即修改新的函数/对象的proptype属性指向到被继承的函数/对象的实例上，而不是自己的构造函数。</p>
+				<p>组合继承：</p>：借助于创建对象的思维方式，以及call()或apply()方法，可以实现组合的继承方式，即在子对象中的环境中运行父类的call()方法super.call()，实现父方法中实例属性继承，通过将新对象的原型链proptype指向父对象的构造函数实现方法继承，并且还可以通过*.proptype.functionName() = function()来扩展新的方法。ECMAScript支持面向对象编程但不使用类或接口。对象可以在代码执行过程中创建和增强，因此具有动态性而非严格意义的实体。
 				
+			<li><h1>第5天-2016/06/19</h1></li>
+				<h5> </h5>		
 				
 				
 			</ul>
