@@ -99,11 +99,22 @@
 				<h5>面向对象的程序设计</h5>	
 				<p><strong>创建对象</strong>:理解对象，及创建对象的几种模式-工厂模式-构造函数模式-原型模式-及构造函数和原型组合模式等，其中组合构造函数模式和原型模式的方法最优，其中构造函数模式用于定义实例属性，而原型模式用于定义方法和需要共享的属性，最大限度地节省内存S6.2.4 -P178-P159,还可以进一步使用动态原型模式，即在需要时才对原型部分进行初始化</p>
 				<p><strong>继承</strong>:ECMAScript只支持“实现继承”，不支持接口和类继承，实现集成的方式主要是依靠原型链来实现的。即修改新的函数/对象的proptype属性指向到被继承的函数/对象的实例上，而不是自己的构造函数。</p>
-				<p>组合继承：</p>：借助于创建对象的思维方式，以及call()或apply()方法，可以实现组合的继承方式，即在子对象中的环境中运行父类的call()方法super.call()，实现父方法中实例属性继承，通过将新对象的原型链proptype指向父对象的构造函数实现方法继承，并且还可以通过*.proptype.functionName() = function()来扩展新的方法。ECMAScript支持面向对象编程但不使用类或接口。对象可以在代码执行过程中创建和增强，因此具有动态性而非严格意义的实体。
-				
+				<p>组合继承：借助于创建对象的思维方式，以及call()或apply()方法，可以实现组合的继承方式，即在子对象中的环境中运行父类的call()方法super.call()，实现父方法中实例属性继承，通过将新对象的原型链proptype指向父对象的构造函数实现方法继承，并且还可以通过*.proptype.functionName() = function()来扩展新的方法。ECMAScript支持面向对象编程但不使用类或接口。对象可以在代码执行过程中创建和增强，因此具有动态性而非严格意义的实体</p>
 			<li><h1>第5天-2016/06/19</h1></li>
-				<h5> </h5>		
-				
+				<h5>jQuery</h5>		
+				<ul>
+					<li><strong>1. jQuery是Javascript函数库</strong></li>
+					<li><strong>2. 如何引入？</strong> 下载后本地引入开发版/压缩版 | 使用官方及第三方的CDN内容分发网络在线引用</li>
+					<li><strong>3. jQuery特性：</strong>HTML元素选取，HTML元素操作，CSS事件，HTML元素事件，Javascript特效和动画，HTML DOM遍历和修改，AJAX，Utilities</li>
+					<li><strong>4. 基础语法：</strong> 标准模式jQuery(selector).action() | 简单模式$(selector).action() 不能使用$的情况下可以先使用$.noConfict()取消jQuery简单模式；最常用的文档就绪函数 $(document).ready(function(){--- jQuery functions go here ---}); 例子：$(this).hide() 隐藏正在操作的当前元素 $("p").hide() 隐藏所有段落 $(".test").show(1000) 显示类名为test的段落 $("#test").hide()隐藏id为test的段落</li>
+					<li><strong>5. jQuery选择器：</strong>允许对单个元素（基于名字），元素组（基于标签或同个类名），或限定范围的选择和遍历方法选择，还可以对基于属性进行选择，以及css选择器（用来改变所选元素的css样式）</li>
+					<li><strong>6. jQuery事件：</strong>一般用以选择器选择的元素进行某个具体的操作或操作后的更多事件响应函数进行回调，即触发某个具体事件或者把某个事件函数绑定到某个元素上，在特定事件触发时，执行该函数</li>
+					<li>----事件分析：</li>
+					<li><strong>7. jQuery效果-事半功倍：</strong> 隐藏hide(speed, callback)/显示/show(speed, callback)/切换toggle()/淡入fadeIn(speed, callback)/淡出fadeOut(speed, callback)/渐变切换Fadetoggle()/透明渐变fadeTo(speed,opacity,callback)/滑动slideDown(speed, callback)/slideUp(speed, callback)/slideToggle(speed, callback)/动画$(selector).animate({params},speed, callback)其中params是成对出现的css参数,参数值还可以设置为hide/show/toggle, 调用多次按顺序执行/$(selector).stop(stopAll, goToEnd),两个可选参数，其中第二个参数goToEnd依赖第一个参数stopAll / callback:如果希望某个事件发生后继续执行语句，必须使用callback函数/ 允许一个jQuery语句中依次执行多个jQuery方法-例子$("#p1").css("color","red").slideUp(2000).slideDown(2000);</li>
+					<li><strong>8. jQuery 文档操作：</strong> 获得内容的3个方法 text(), html(), val() 格式例子 $(selector).text() </li>
+					<li><strong>9. jQuery 属性操作:</strong> </li>
+					<li><strong>10. jQuery css操作：</strong> </li>
+				</ul>
 				
 			</ul>
 		 </section>
