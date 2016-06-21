@@ -82,7 +82,7 @@
 				<p><strong>传递参数：</strong>所有函数的参数都是按照值传递的。</p>
 				<p><strong>类型检测：</strong>typeof检测是否是基本数据类型或对象 instanceof检测是某一种引用类型的对象，更具体Array, RegExp等</p>
 				<p><strong>执行环境：</strong>定义了变量及函数有权访问的其它数据，决定了它们各自的行为。全局执行环境是最外围的一个执行环境，每个函数都有自己的局部执行环境；内部变量不能被外部访问；但是with语句和try-catch语句 的catch部分变向延长了作用域范围。</p>
-				<p><strong>垃圾收集：</strong>标记清楚/引用计数（引用计数在循环引用时会有问题，不用时应及时手工解除引用 xxx = null；），建议：及时解除不再使用的全局对象，全局对象属性，及循环引用变量的引用。
+				<p><strong>垃圾收集：</strong>标记清除/引用计数（引用计数在循环引用时会有问题，不用时应及时手工解除引用 xxx = null；），建议：及时解除不再使用的全局对象，全局对象属性，及循环引用变量的引用。
 				<h5>引用类型-数组</h5>
 				<P><strong>ECMAScript数组Array</strong>：存储数据的有序列表，与其它语言不同的是javascript数组的每一项都可以存储任何类型的数据，算是javascript弱类型的体现。</p>
 				<p>两种创建方式 var colors = new Array(); var colors = []; var colors = new Array(20); var colors = ["red","blue","grep"]; new 可以省略，如果唯一参数是数值的时候，则创建length=该值长度的数组。 colors.isArray(); colors.join(",") === colors.join(), alert(colors.join(“/”)),输出以/为分割的数组值 </p>
@@ -111,9 +111,14 @@
 					<li><strong>6. jQuery事件：</strong>一般用以选择器选择的元素进行某个具体的操作或操作后的更多事件响应函数进行回调，即触发某个具体事件或者把某个事件函数绑定到某个元素上，在特定事件触发时，执行该函数</li>
 					<li>----事件分析：</li>
 					<li><strong>7. jQuery效果-事半功倍：</strong> 隐藏hide(speed, callback)/显示/show(speed, callback)/切换toggle()/淡入fadeIn(speed, callback)/淡出fadeOut(speed, callback)/渐变切换Fadetoggle()/透明渐变fadeTo(speed,opacity,callback)/滑动slideDown(speed, callback)/slideUp(speed, callback)/slideToggle(speed, callback)/动画$(selector).animate({params},speed, callback)其中params是成对出现的css参数,参数值还可以设置为hide/show/toggle, 调用多次按顺序执行/$(selector).stop(stopAll, goToEnd),两个可选参数，其中第二个参数goToEnd依赖第一个参数stopAll / callback:如果希望某个事件发生后继续执行语句，必须使用callback函数/ 允许一个jQuery语句中依次执行多个jQuery方法-例子$("#p1").css("color","red").slideUp(2000).slideDown(2000);</li>
-					<li><strong>8. jQuery 文档操作：</strong> 获得内容的3个方法 text(), html(), val() 格式例子 $(selector).text() </li>
-					<li><strong>9. jQuery 属性操作:</strong> </li>
-					<li><strong>10. jQuery css操作：</strong> </li>
+				<li><h1>第6天-2016/06/20</h1></li>
+					<li><strong>8. jQuery 操作：</strong> 获得内容的3个方法 text()-返回所选元素里的文本/内容, html()-返回html标签及标签里的内容/文本, val()-返回表单里的值 格式例子 $(selector).text() </li>
+					<li><strong>9. jQuery 属性操作:</strong>$("p:first").addClass("intro");像制定元素添加类名 $(selector).attr(attribute) 返回元素的值 $(selector).attr(attribute,value) / $("img").attr({width:"50",height:"80"});设置元素属性和值 hasClass() / removeAttr() removeClass() var() html()</li>
+					<li><strong>10. jQuery css操作：</strong>css() 设置或返回匹配元素的css样式属性 height() 设置或返回匹配元素的高度 width()返回或设置匹配元素宽度 offset()返回或设置匹配元素相对于文档的偏移量（top/left2个方向）offsetParent()返回父元素 position() 返回匹配元素的位置（相对于可见父元素）scrolLeft() scrolTop()返回滚动条左侧和上侧的移动距离</li>
+					<li><strong>11. jQuery 文档操作：</strong>DOM操作，匹配元素后插入内容：$(content).prependTo(selector); $(selector).after(content) / $(selector).after(function(index)); 向匹配元素开头/结尾添加内容：$(selector).prepend(content); $(selector).append(content); $(selector).append(function(index,html)); 另外类似功能-添加内容到指定元素开头/结尾： $(content).appendTo(selector); 复制匹配元素 $(selector).clone(includeEvents); 从页面删除p元素及其子元素，保存到test中：var test = $("p").detach(); 删除子节点$("div").empty(); 匹配元素前/后插入$(content).insertAfter(selector);$(content).insertBefore(selector); 删除匹配元素 $("p").remove(); 删除指定元素中的属性 $("p").removeAttr(); 删除类名$(selector).removeClass(class); $(selector).removeClass(function(index,oldclass)); toggleClass(); 替换：$(selector).replaceWith(content); $(content).replaceAll(selector); 包裹wrap();unwrap();wrapAll();wrapinner(); </li>
+					<li><strong>12. jQuery 文档遍历：</strong>向上祖先：parent(); parents(); parentsUntil();后代向下：children(); find(); 同胞：siblings()-所有同胞; next(); nextAll(); nextUntil();prev();prevAll();prevUntil();-过滤：$(selector).find(xxx)-子集中寻找; first();last();$(selector).filter(xxx)-与selector中寻找符合的; not()-与filter相反;$(selector).eq(index)-所匹配元素第index-1个;</li>
+					<li><strong>12. jQuery AJAX</strong>: 不刷新浏览器的情况下从服务器加载数据 = 局部数据微操 $(selector).load(URL-必须, data, callback); 例：$("#div1").load("demo_text.txt"); $("#div2").load("demo_text.txt #p1"); $("div3").load("demo_test.txt", function(responseTxt, statusTxt, xhr){}); AJAX GET-有可能从缓存取数据: 例$.get("./demo_test.txt", function(data, status){}); AJAX POST: 携带请求参数去获取数据， 例$.post("demo_test.txt",{name: "Jeff", city: "SH"}, function(data, status){}); 默认异步请求，即先锁住浏览器，执行完ajax后再执行其它，此时false为同步：$("#b01").click(function(){htmlobj=$.ajax({url:"/jquery/test1.txt",async:false}); JSON操作: $.getJSON("demo_ajax_json.js",function(result){}); 加载脚本：jQuery.getScript() 序列化表单：  x=$("form").serializeArray(); </li>
+				<li><h1>第7天-2016/06/21</h1></li>
 				</ul>
 				
 			</ul>
