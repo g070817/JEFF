@@ -18,7 +18,6 @@
     <div class="wrapper">
       <header>
         <h1>Jeff.GitHub.com</h1>
-        <p>CV of Jifa Gao</p>
         <p class="view"><a href="https://github.com/g070817/jeff.github.com">View the Project on GitHub <small>g070817/jeff.github.com</small></a></p>
         <ul>
           <li><a href="https://github.com/g070817/jeff.github.com/zipball/master">Download <strong>ZIP File</strong></a></li>
@@ -117,8 +116,18 @@
 					<li><strong>10. jQuery css操作：</strong>css() 设置或返回匹配元素的css样式属性 height() 设置或返回匹配元素的高度 width()返回或设置匹配元素宽度 offset()返回或设置匹配元素相对于文档的偏移量（top/left2个方向）offsetParent()返回父元素 position() 返回匹配元素的位置（相对于可见父元素）scrolLeft() scrolTop()返回滚动条左侧和上侧的移动距离</li>
 					<li><strong>11. jQuery 文档操作：</strong>DOM操作，匹配元素后插入内容：$(content).prependTo(selector); $(selector).after(content) / $(selector).after(function(index)); 向匹配元素开头/结尾添加内容：$(selector).prepend(content); $(selector).append(content); $(selector).append(function(index,html)); 另外类似功能-添加内容到指定元素开头/结尾： $(content).appendTo(selector); 复制匹配元素 $(selector).clone(includeEvents); 从页面删除p元素及其子元素，保存到test中：var test = $("p").detach(); 删除子节点$("div").empty(); 匹配元素前/后插入$(content).insertAfter(selector);$(content).insertBefore(selector); 删除匹配元素 $("p").remove(); 删除指定元素中的属性 $("p").removeAttr(); 删除类名$(selector).removeClass(class); $(selector).removeClass(function(index,oldclass)); toggleClass(); 替换：$(selector).replaceWith(content); $(content).replaceAll(selector); 包裹wrap();unwrap();wrapAll();wrapinner(); </li>
 					<li><strong>12. jQuery 文档遍历：</strong>向上祖先：parent(); parents(); parentsUntil();后代向下：children(); find(); 同胞：siblings()-所有同胞; next(); nextAll(); nextUntil();prev();prevAll();prevUntil();-过滤：$(selector).find(xxx)-子集中寻找; first();last();$(selector).filter(xxx)-与selector中寻找符合的; not()-与filter相反;$(selector).eq(index)-所匹配元素第index-1个;</li>
-					<li><strong>12. jQuery AJAX</strong>: 不刷新浏览器的情况下从服务器加载数据 = 局部数据微操 $(selector).load(URL-必须, data, callback); 例：$("#div1").load("demo_text.txt"); $("#div2").load("demo_text.txt #p1"); $("div3").load("demo_test.txt", function(responseTxt, statusTxt, xhr){}); AJAX GET-有可能从缓存取数据: 例$.get("./demo_test.txt", function(data, status){}); AJAX POST: 携带请求参数去获取数据， 例$.post("demo_test.txt",{name: "Jeff", city: "SH"}, function(data, status){}); 默认异步请求，即先锁住浏览器，执行完ajax后再执行其它，此时false为同步：$("#b01").click(function(){htmlobj=$.ajax({url:"/jquery/test1.txt",async:false}); JSON操作: $.getJSON("demo_ajax_json.js",function(result){}); 加载脚本：jQuery.getScript() 序列化表单：  x=$("form").serializeArray(); </li>
-				<li><h1>第7天-2016/06/21</h1></li>
+					<li><strong>12. jQuery AJAX</strong>: 不刷新浏览器的情况下从服务器加载数据 = 局部数据微操 $(selector).load(URL-必须, data, callback); 例：$("#div1").load("demo_text.txt"); $("#div2").load("demo_text.txt #p1"); $("div3").load("demo_test.txt", function(responseTxt, statusTxt, xhr){}); AJAX GET-有可能从缓存取数据: 例$.get("./demo_test.txt", function(data, status){}); AJAX POST: 携带请求参数去获取数据， 例$.post("demo_test.txt",{name: "Jeff", city: "SH"}, function(data, status){}); 默认异步请求，即先锁住浏览器，执行完ajax后再执行其它，此时false为同步：$("#b01").click(function(){htmlobj=$.ajax({url:"/jquery/test1.txt",async:false}); JSON操作: $.getJSON("demo_ajax_json.js",function(result){}); 加载脚本：jQuery.getScript() 序列化表单元素，返回 JSON 数据结构数据:  x=$("form").serializeArray(); </li>
+				<li><h1>第7天-2016/06/22</h1></li>
+					<h5>函数表达式</h5>
+					<li><strong> 递归： </strong> 调用函数自己，不如调用arguments.callee(); callee指向正在执行的函数的指针，但是callee在严格模式下部能使用。此时更安全的方式是使用函数表达式内匿名函数的方式来更安全。</li>
+					<li><strong> 闭包： </strong> 闭包是可访问上一层函数作用域里变量的函数，即便上一层函数已经关闭。 当内部函数 在定义它的作用域 的外部 被引用时,就创建了该内部函数的闭包 ,如果内部函数引用了位于外部函数的变量,当外部函数调用完毕后,这些变量在内存不会被释放,因为闭包需要它们.</li>
+					<li>由于闭包函数可以访问外层函数中的变量，所以外层函数在执行结束后，其作用域活动对象并不会被释放（注意，外层函数执行结束后执行环境和对应的作用域链就会被销毁），而是被闭包函数的作用域链所引用，直到闭包函数被销毁后，外层函数的作用域活动对象才会被销毁。这也正是闭包要占用内存的原因。一旦确定匿名函数使用完毕后，最好设置为null，确保正常回收占用的内存</li>
+					<li>最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。</li>
+					<li><strong>当函数返回了一个闭包（即返回一个自己内部定义的匿名函数）时，该函数的执行会销毁，但活动变量或者说作用域会保存到闭包不存在位置。适当的时机将闭包设置为null，才不会造成内存的无故占用</strong></li>
+					<li><strong> This </strong> this对象是在运行时基于函数执行环境绑定的：在全局函数中，this = window， 而当函数被某个对象作为方法调用时，this指向这个对象。但是，匿名函数的执行具有全局性，通常是指向window，却也有例外。另外，当在一个对象/函数内部通过另一个对象/函数调用call()或者apply()会改变this指向到被调用的对象。</li>
+					<li><strong>块级作用域</strong>创建并立即调用/使用一个函数，这样既可以执行其中的代码，又不会在内存中留下对该函数的引用，因为执行完后函数内部的所有变量被立即销毁，不占用内存</li>
+					
+					
 				</ul>
 				
 			</ul>
