@@ -110,13 +110,16 @@
 					<li><strong>6. jQuery事件：</strong>一般用以选择器选择的元素进行某个具体的操作或操作后的更多事件响应函数进行回调，即触发某个具体事件或者把某个事件函数绑定到某个元素上，在特定事件触发时，执行该函数</li>
 					<li>----事件分析：</li>
 					<li><strong>7. jQuery效果-事半功倍：</strong> 隐藏hide(speed, callback)/显示/show(speed, callback)/切换toggle()/淡入fadeIn(speed, callback)/淡出fadeOut(speed, callback)/渐变切换Fadetoggle()/透明渐变fadeTo(speed,opacity,callback)/滑动slideDown(speed, callback)/slideUp(speed, callback)/slideToggle(speed, callback)/动画$(selector).animate({params},speed, callback)其中params是成对出现的css参数,参数值还可以设置为hide/show/toggle, 调用多次按顺序执行/$(selector).stop(stopAll, goToEnd),两个可选参数，其中第二个参数goToEnd依赖第一个参数stopAll / callback:如果希望某个事件发生后继续执行语句，必须使用callback函数/ 允许一个jQuery语句中依次执行多个jQuery方法-例子$("#p1").css("color","red").slideUp(2000).slideDown(2000);</li>
+				</ul>
 				<li><h1>第6天-2016/06/20</h1></li>
-					<li><strong>8. jQuery 操作：</strong> 获得内容的3个方法 text()-返回所选元素里的文本/内容, html()-返回html标签及标签里的内容/文本, val()-返回表单里的值 格式例子 $(selector).text() </li>
+				<ul>
+				<li><strong>8. jQuery 操作：</strong> 获得内容的3个方法 text()-返回所选元素里的文本/内容, html()-返回html标签及标签里的内容/文本, val()-返回表单里的值 格式例子 $(selector).text() </li>
 					<li><strong>9. jQuery 属性操作:</strong>$("p:first").addClass("intro");像制定元素添加类名 $(selector).attr(attribute) 返回元素的值 $(selector).attr(attribute,value) / $("img").attr({width:"50",height:"80"});设置元素属性和值 hasClass() / removeAttr() removeClass() var() html()</li>
 					<li><strong>10. jQuery css操作：</strong>css() 设置或返回匹配元素的css样式属性 height() 设置或返回匹配元素的高度 width()返回或设置匹配元素宽度 offset()返回或设置匹配元素相对于文档的偏移量（top/left2个方向）offsetParent()返回父元素 position() 返回匹配元素的位置（相对于可见父元素）scrolLeft() scrolTop()返回滚动条左侧和上侧的移动距离</li>
 					<li><strong>11. jQuery 文档操作：</strong>DOM操作，匹配元素后插入内容：$(content).prependTo(selector); $(selector).after(content) / $(selector).after(function(index)); 向匹配元素开头/结尾添加内容：$(selector).prepend(content); $(selector).append(content); $(selector).append(function(index,html)); 另外类似功能-添加内容到指定元素开头/结尾： $(content).appendTo(selector); 复制匹配元素 $(selector).clone(includeEvents); 从页面删除p元素及其子元素，保存到test中：var test = $("p").detach(); 删除子节点$("div").empty(); 匹配元素前/后插入$(content).insertAfter(selector);$(content).insertBefore(selector); 删除匹配元素 $("p").remove(); 删除指定元素中的属性 $("p").removeAttr(); 删除类名$(selector).removeClass(class); $(selector).removeClass(function(index,oldclass)); toggleClass(); 替换：$(selector).replaceWith(content); $(content).replaceAll(selector); 包裹wrap();unwrap();wrapAll();wrapinner(); </li>
 					<li><strong>12. jQuery 文档遍历：</strong>向上祖先：parent(); parents(); parentsUntil();后代向下：children(); find(); 同胞：siblings()-所有同胞; next(); nextAll(); nextUntil();prev();prevAll();prevUntil();-过滤：$(selector).find(xxx)-子集中寻找; first();last();$(selector).filter(xxx)-与selector中寻找符合的; not()-与filter相反;$(selector).eq(index)-所匹配元素第index-1个;</li>
-					<li><strong>12. jQuery AJAX</strong>: 不刷新浏览器的情况下从服务器加载数据 = 局部数据微操 $(selector).load(URL-必须, data, callback); 例：$("#div1").load("demo_text.txt"); $("#div2").load("demo_text.txt #p1"); $("div3").load("demo_test.txt", function(responseTxt, statusTxt, xhr){}); AJAX GET-有可能从缓存取数据: 例$.get("./demo_test.txt", function(data, status){}); AJAX POST: 携带请求参数去获取数据， 例$.post("demo_test.txt",{name: "Jeff", city: "SH"}, function(data, status){}); 默认异步请求，即先锁住浏览器，执行完ajax后再执行其它，此时false为同步：$("#b01").click(function(){htmlobj=$.ajax({url:"/jquery/test1.txt",async:false}); JSON操作: $.getJSON("demo_ajax_json.js",function(result){}); 加载脚本：jQuery.getScript() 序列化表单元素，返回 JSON 数据结构数据:  x=$("form").serializeArray(); </li>
+					<li><strong>12. jQuery AJAX</strong>: 不刷新浏览器的情况下从服务器加载数据 = 局部数据微操 $(selector).load(URL-必须, data, callback); 例：$("#div1").load("demo_text.txt"); $("#div2").load("demo_text.txt #p1"); $("div3").load("demo_test.txt", function(responseTxt, statusTxt, xhr){}); AJAX GET-有可能从缓存取数据: 例$.get("./demo_test.txt", function(data, status){}); AJAX POST: 携带请求参数去获取数据， 例$.post("demo_test.txt",{name: "Jeff", city: "SH"}, function(data, status){}); 默认异步请求，即先锁住浏览器，执行完ajax部分后再执行其它，此时false为同步：$("#b01").click(function(){htmlobj=$.ajax({url:"/jquery/test1.txt",async:false}); JSON操作: $.getJSON("demo_ajax_json.js",function(result){}); 加载脚本：jQuery.getScript() 序列化表单元素，返回 JSON 数据结构数据:  x=$("form").serializeArray(); </li>
+				</ul>
 				<li><h1>第7天-2016/06/22</h1></li>
 					<h5>函数表达式</h5>
 					<li><strong> 递归： </strong> 调用函数自己，不如调用arguments.callee(); callee指向正在执行的函数的指针，但是callee在严格模式下部能使用。此时更安全的方式是使用函数表达式内匿名函数的方式来更安全。</li>
@@ -126,6 +129,27 @@
 					<li><strong>当函数返回了一个闭包（即返回一个自己内部定义的匿名函数）时，该函数的执行会销毁，但活动变量或者说作用域会保存到闭包不存在位置。适当的时机将闭包设置为null，才不会造成内存的无故占用</strong></li>
 					<li><strong> This </strong> this对象是在运行时基于函数执行环境绑定的：在全局函数中，this = window， 而当函数被某个对象作为方法调用时，this指向这个对象。但是，匿名函数的执行具有全局性，通常是指向window，却也有例外。另外，当在一个对象/函数内部通过另一个对象/函数调用call()或者apply()会改变this指向到被调用的对象。</li>
 					<li><strong>块级作用域</strong>创建并立即调用/使用一个函数，这样既可以执行其中的代码，又不会在内存中留下对该函数的引用，因为执行完后函数内部的所有变量被立即销毁，不占用内存</li>
+				</ul>
+					
+					<li><h1>第8天-2016/06/23</h1></li>
+					<h5>RESTful API</h5>
+						<p>1.使用HTTP动词：GET POST PUT DELETE 2.无状态连接，服务器端不应保存过多上下文状态，即每个请求都是独立的；3.为每个资源设置URI；4.通过XML JSON进行数据传递；</p>
+						<p>实现上述原则的架构即可称为RESTFul架构。1.互联网环境下，任何应用的架构和API可以被快速理解；	2.分布式环境下，任何请求都可以被发送到任意服务器；3.异构环境下，任何资源的访问和使用方式都统一；</p>
+						<p>restful 是一种简单的设计方案。它认为网站，或者说后台服务是对资源的管理，包括创建，更新，获取和删除。实际设计的时候，需要对资源进行合理的抽象。</p>
+						<p>restful 指导原则比较简单，一切皆是资源，api 就是对资源的管理 ；restful 认为一切皆是资源， API 应该是对资源的状态的转化。</p>
+						<p>GET (选择)：从服务器上获取一个具体的资源或者一个资源列表。 POST （创建）： 在服务器上创建一个新的资源。PUT（更新）：以整体的方式更新服务器上的一个资源。 PATCH （更新）：只更新服务器上一个资源的一个属性。DELETE（删除）：删除服务器上的一个资源。 HEAD ： 获取一个资源的元数据，如数据的哈希值或最后的更新时间。OPTIONS：获取客户端能对资源做什么操作的信息。</p>
+						<p>建议将后端服务划分成为2大类1. domain resource server (基于domain的添删改查的操作)2. services (功能类的服务)区分这2个类型的主要区别在于系统的交互被抽象成domain.如果可以被抽象出domain 例如：登录和登出可以抽象出User 对象(domain)</p>
+						<p>资源（Resource）资源的表述（Representation）状态转移（State Transfer）统一接口（Uniform Interface）超文本驱动（Hypertext Driven）</p>
+						<p>REST的核心原则是将你的API拆分为逻辑上的资源。这些资源通过http被操作（GET ,POST,PUT,DELETE）。http是无状态的 幂等的意味着对同一URL的多个请求应该返回同样的结果</p>
+						<p>200 ok  - 成功返回状态，对应，GET,PUT,PATCH,DELETE. 201 created  - 成功创建。	304 not modified   - HTTP缓存有效。400 bad request   - 请求格式错误。401 unauthorized   - 未授权/鉴权失败。	403 forbidden   - 鉴权成功，但是该用户没有权限。404 not found - 请求的资源不存在	405 method not allowed - 该http方法不被允许。	410 gone - 这个url对应的资源现在不可用。	415 unsupported media type - 请求类型错误。422 unprocessable entity - 校验错误时用。429 too many request - 请求过多。</p>
+
+					<h5>JSON</h5>
+						<p>JSON是一种有语法定义或者有规范的轻量级数据格式，而不是语言。很多编程语言自己都有对JSON数据的解析器和序列化器。</p>
+						<p>可以表现三种类型的值：简单值，对象和数组; 简单值-类似于javasript中的基本数据类型，但是不包括undefined, 并且字符串必须加双引号。 对象-类似于javascript对象字面量，但仅包括{}内的部分，切结尾没有分号，同时最重要的-属性必须加双引号，对象仍可以嵌套对象。数组-同样类似于javasript的数组定义的字面量形式，但仅有数据部分。</p>
+						<p>JSON解析：JSON可以解析为javascript对象，使用对象的方法获取相应的属性值，语法结构为 var book = JSON.parse(jsonname);</p>
+						<p>JSON序列化：javascript对象也可以序列化为JSON对象，语法结构为：var jsontext = JSON.stringify(javascript对象)，但是javascript对象中的原型和方法，以及undefined的属性，都会被自动忽略，输出的是不包含任何空格和缩进格式的JSON数据对象</p>
+						<p>JSON.stringify(obj,filter,option),其中obj是要JSON序列化的对象，filer是一个数组或者（键值对）函数，option是格式化参数，说明缩进字符或缩进字符量长度，缩进字符或缩进字符量长度不能超过10个字符</p>
+						
 					
 					
 				</ul>
